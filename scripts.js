@@ -34,7 +34,9 @@ request.onload = function() {
     })
 
   } else {
-    console.log('error')
+    const error = document.createElement('marquee')
+    error.textContent = "It's not working"
+    app.appendChild(error)
   }
 }
 
