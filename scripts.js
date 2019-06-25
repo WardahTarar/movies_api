@@ -3,7 +3,11 @@ const app = document.getElementById('root')
 const logo = document.createElement('img')
 logo.src = 'logo.png'
 
+const container = document.createElement('div')
+container.setAttribute('class','containter')
+
 app.appendChild(logo)
+app.appendChild(container)
 
 var request = new XMLHttpRequest()
 
@@ -13,7 +17,16 @@ request.onload = function() {
 
   if (request.status >= 200 && request.status < 400) {
     data.forEach(movie => {
-      console.log(movie.title)
+      
+      const card = document.createElement('div')
+      card.setAttribute('class','card')
+
+      const h1 = document.createElement('h1')
+      h1.textContent = movie.title
+
+      container.appendChild(card)
+
+      card.appendChild(h1)
     })
   } else {
     console.log('error')
