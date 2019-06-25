@@ -25,14 +25,14 @@ request.onload = function() {
       h1.textContent = movie.title
 
       const p = document.createElement('p')
-      p.textContent = movie.description
+      p.textContent = `${movie.description.substring(0,300)}...`
 
       container.appendChild(card)
 
       card.appendChild(h1)
       card.appendChild(p)
     })
-    
+
   } else {
     console.log('error')
   }
